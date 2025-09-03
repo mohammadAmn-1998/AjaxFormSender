@@ -1,0 +1,215 @@
+.error-validate{
+    border-color: red;
+}
+
+.validate-container {
+    font-size: 9px;
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    padding: 5px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: 200px; /* Fixed width */
+    min-width: 80px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.validate-container:focus {
+    display: none;
+}
+
+/* برای پیام خطا */
+.validate-span {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: rgba(241, 233, 233, 0.678); /* قرمز ملایم */
+    color: #dc3545; /* رنگ متن خطا */
+    padding: 0px 8px;
+    border-radius: 6px;
+    font-size: 9px;
+    font-weight: 500;
+    white-space: pre-wrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 100%; /* Make span fill container */
+    box-sizing: border-box;
+}
+
+.validate-container:hover .validate-span {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.form-control:focus .validate-span {
+    opacity: 0;
+    visibility: none;
+    transform: translateY(0);
+  }
+
+.date-container {
+  position: absolute;
+  top: 8px;
+  left: 60%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+.date-container select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: white;
+  padding: 6px 12px;
+  text-align: center;
+  direction: ltr;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.date-container select:hover,
+.date-container select:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.date-container select option {
+  color: black;
+}
+.file_input{
+  opacity: .1;
+  position: absolute;
+  top: 11px;
+  right: 35px;
+  color: #ffff;
+}
+.swal-small-popup {
+  width: 400px !important;
+  padding: 10px !important;
+  font-size: 12px;
+  height: auto !important;
+  box-sizing: border-box;
+  text-align: center;
+  direction: rtl;
+  font-family: "Vazir", sans-serif !important;
+  border-radius: 15px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff !important;
+  color: #333 !important;
+  border: 2px solid #ddd !important;
+
+}
+
+.swal-small-title {
+  font-size: 17px !important;
+}
+
+.swal-small-icon {
+  transform: scale(0.7);
+}
+
+.hanged_button {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  z-index: 1000;
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease;
+  opacity: 0.85;
+  animation: moveRandom 10s linear infinite;
+}
+
+/* Keyframes for random movement (simulate with multiple steps) */
+@keyframes moveRandom {
+  0% {
+    right: 0;
+    top: -25px;
+  }
+  20% {
+    right: 20%;
+    top: 50px;
+  }
+  40% {
+    right: 40%;
+    top: -15px;
+  }
+  60% {
+    right: 60%;
+    top: 400px;
+  }
+  80% {
+    right: 80%;
+    top: 10px;
+  }
+  100% {
+    right: 0;
+    top: 94%;
+  }
+}
+.hanged_button:hover,
+.hanged_button:focus {
+  background-color: #007bff;
+  color: #fff;
+  opacity: 1;
+  outline: none;
+  box-shadow: 0 4px 16px 2px rgba(0, 123, 255, 0.25), 0 0 0 3px rgba(0, 123, 255, 0.2);
+  animation-play-state: paused;
+  transform: scale(1.08) translateY(-15px) rotate(-2deg);
+  transition:
+    background-color 0.2s cubic-bezier(.4,2,.6,1),
+    color 0.2s,
+    box-shadow 0.2s,
+    transform 0.25s cubic-bezier(.4,2,.6,1),
+    opacity 0.2s;
+}
+
+.hanged_button:active {
+  background-color: #004085;
+  color: #fff;
+  transform: scale(0.97) translateY(2px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
+  transition: background-color 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+.hanged_button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  color: #fff;
+  opacity: 0.7;
+  box-shadow: none;
+  transform: none;
+}
+.radio_input_container{
+  font-size: small;
+}
+
+@media (max-width: 600px) {
+  .hanged_button {
+    top: -20px;
+    right: 0;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  .date-container {
+    top: 15px;
+    left: 70%;
+    transform: translateX(-50%);
+    gap: 8px;
+  }
+  .date-container select{
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
